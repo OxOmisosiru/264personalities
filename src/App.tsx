@@ -284,9 +284,15 @@ function App() {
 
   if(submitted){
     return (
-      <h1>
-        {personality}
-      </h1>
+      <>
+        <h1>
+          あなたの MBTI は…
+        </h1>
+        <h1>
+          {personality}
+        </h1>
+      </>
+      
     )
   }
 
