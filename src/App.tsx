@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { supabase } from './supabase-setting.ts';
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import './App.css'
+import './index.css'
 
 const questionslist = [
   {
