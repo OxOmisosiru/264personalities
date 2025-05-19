@@ -205,7 +205,7 @@ function App() {
   const submitclick = async() => {
     var ret = 0;
     // まずは Q7 までの加算を行う
-    Object.entries(answers).forEach(([qid , ans] : [qid : string , ans : string]) => { // answers[qid] = ans
+    Object.entries(answers).forEach(([qid , ans] : [string , string]) => { // answers[qid] = ans
       const obj2 = convertanswer.find((item) => item.qid == qid);
       var idx = Number(qid);
       if(idx <= 7 && obj2 && obj2.conv !== undefined){ // obj2 が undefined かもしれないので obj2 && を足す
