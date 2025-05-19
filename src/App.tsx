@@ -158,7 +158,8 @@ let countsperqid : {[key : string] : number} = {
 } 
 
 let countsperans : {[key : string] : number} = {
-
+  "選択肢A" : 0,
+  "選択肢B" : 0,
 }
 
 let qidperans : {[key : string] : string} = {
@@ -191,6 +192,19 @@ function App() {
       countsperans[ans] = (countsperans[ans] ? countsperans[ans] + 1 : 1);
       qidperans[ans] = (qidperans[ans] ? qidperans[ans] : qid);
     })
+
+    if(countsperans["選択肢A"] < countsperans["選択肢B"]){
+      convertanswer[7].conv["選択肢A"] = 0;
+      convertanswer[7].conv["選択肢B"] = 1;
+    }
+    else if(countsperans["選択肢A"] > countsperans["選択肢B"]){
+      convertanswer[7].conv["選択肢A"] = 1;
+      convertanswer[7].conv["選択肢B"] = 0;
+    }
+    else{
+      convertanswer[7].conv["選択肢A"] = 1;
+      convertanswer[7].conv["選択肢B"] = 1;
+    }
 
     console.log(data || []);
     console.log(countsperans);
@@ -318,7 +332,7 @@ function App() {
                   onChange={() => radioclick(q.qid , opt)}
                   className="text-[25px]"
                 />
-                {opt} / ({countsperans[opt] / countsperqid[qidperans[opt]] * 100}) %
+                {opt} / ({Math.round(countsperans[opt] / countsperqid[qidperans[opt]] * 100)} %)
               </label>
 
             ))}
