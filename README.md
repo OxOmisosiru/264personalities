@@ -4,6 +4,6 @@
 Don't you think that is too few?
 
 So I created a service with 181657 diagnostic results.
-This service represents your personality by 4 alphabets.
+You answer 13 questions and this service will represent your personality with 4 alphabets.
 
 Have fun! :)
