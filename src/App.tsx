@@ -19,7 +19,7 @@ const questionslist = [
   {
     "qid" : "3",
     "qtext" : "あなたがパートナーに対して重視するのは…",
-    "options" : ["年齢" , "一途"]
+    "options" : ["礼儀" , "一途"]
   },
   {
     "qid" : "4",
@@ -89,7 +89,7 @@ const convertanswer : AnswerConvType[] = [ // ちゃんとここで型言って�
   },
   {
     "qid" : "3",
-    "conv" : {"年齢" : 0 , "一途" : 1}
+    "conv" : {"礼儀" : 0 , "一途" : 1}
   },
   {
     "qid" : "4",
