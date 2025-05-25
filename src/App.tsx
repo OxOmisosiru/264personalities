@@ -69,7 +69,7 @@ const questionslist = [
   {
     "qid" : "13",
     "qtext" : "あなたがピンと来る4文字は…",
-    "options" : ["1.ESTP" , "2.ESTJ" , "3.ENTJ" , "4.ENTP" , "5.ISTP" , "6.ISTJ" , "7.INTJ" , "8.INTP" , "9.ESFP" , "10.ESFJ" , "11.ENFJ" , "12.ENFP" , "13.ISFP" , "14.ISFJ" , "15.INFJ" , "16.INFP"]
+    "options" : ["ESTP" , "ESTJ" , "ENTJ" , "ENTP" , "ISTP" , "ISTJ" , "INTJ" , "INTP" , "ESFP" , "ESFJ" , "ENFJ" , "ENFP" , "ISFP" , "ISFJ" , "INFJ" , "INFP"]
   },
 ];
 
@@ -129,7 +129,7 @@ const convertanswer : AnswerConvType[] = [ // ちゃんとここで型言って�
   },
   {
     "qid" : "13",
-    "conv" : {"1.ESTP" : 1 , "2.ESTJ" : 2 , "3.ENTJ" : 3 , "4.ENTP" : 4 , "5.ISTP" : 5 , "6.ISTJ" : 6 , "7.INTJ" : 7 , "8.INTP" : 8 , "9.ESFP" : 9 , "10.ESFJ" : 10 , "11.ENFJ" : 11 , "12.ENFP" : 12 , "13.ISFP" : 13 , "14.ISFJ" : 14 , "15.INFJ" : 15 , "16.INFP" : 16}
+    "conv" : {"ESTP" : 1 , "ESTJ" : 2 , "ENTJ" : 3 , "ENTP" : 4 , "ISTP" : 5 , "ISTJ" : 6 , "INTJ" : 7 , "INTP" : 8 , "ESFP" : 9 , "ESFJ" : 10 , "ENFJ" : 11 , "ENFP" : 12 , "ISFP" : 13 , "ISFJ" : 14 , "INFJ" : 15 , "1INFP" : 16}
   },
 ]
 
@@ -169,7 +169,7 @@ let qidperans : {[key : string] : string} = {
 function App() {
   // answers はstringをkeyとして値がkeyの連想配列 Object
   const [answers , setAnswers] = useState<{[key : string] : string}>({})
-  const [personality , setPersonality] = useState("");
+  const [personality , setPersonality] = useState<string>("");
   const [submitted , setSubmitted] = useState(false);
 
   const [_allanswers , setAllanswers] = useState<allanswerstype[]>([])
@@ -260,7 +260,7 @@ function App() {
     console.log(ret);
     ret--;
 
-    var res_personality = "";
+    var res_personality : string = "";
     res_personality += letters[Math.floor(ret/(26*26*26))];
     ret %= (26*26*26);
     res_personality += letters[Math.floor(ret/(26*26))];
@@ -283,7 +283,7 @@ function App() {
   }
 
   if(submitted){
-    const tweettxt = "診断結果：" + {personality} + (personality == "AAAA" ? "\n仕組みを理解し見事 AAAA と診断された！" : "") + (personality == "INFP" ? "\n全てを理解し大変な作業をし見事，自分の直観と診断結果を一致させた！" : "") + "\n\nあなたも 4 文字を診断→ https://26p4personalities.vercel.app/\n\n#26p4Personalities";
+    const tweettxt = "診断結果：" + personality + (personality == "AAAA" ? "\n仕組みを理解し見事 AAAA と診断された！" : "") + (personality == "INFP" ? "\n全てを理解し大変な作業をし見事，自分の直観と診断結果を一致させた！" : "") + "\n\nあなたも 4 文字を診断→ https://26p4personalities.vercel.app/\n\n#26p4Personalities";
     const tweeturl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweettxt)}`;
     return (
       <>
@@ -298,6 +298,7 @@ function App() {
         </button>
         <h2 className="mt-10">
           【挑戦１】診断の仕組みを理解し「AAAA」と診断されよう。
+            <br></br>
           【挑戦２】Q13で選んだ4文字と最終的な診断結果を一致させよう（多くの作業を必要とします）。
         </h2>
       </>
@@ -330,7 +331,7 @@ function App() {
 
           {q.qid == "13" ? 
             <div className="bg-red-800 px-3 py-3 mt-10 rounded text-[22px]">
-              Question. 13<br/>最後にあなたの回答を分析データに加え，最終的な診断を行います。
+              Question. 13<br/>最後にあなたが何番目を選択したかを分析データに加え，最終的な診断を行います。
             </div>
             : <div></div>
           }
