@@ -129,7 +129,7 @@ const convertanswer : AnswerConvType[] = [ // ちゃんとここで型言って�
   },
   {
     "qid" : "13",
-    "conv" : {"ESTP" : 1 , "ESTJ" : 2 , "ENTJ" : 3 , "ENTP" : 4 , "ISTP" : 5 , "ISTJ" : 6 , "INTJ" : 7 , "INTP" : 8 , "ESFP" : 9 , "ESFJ" : 10 , "ENFJ" : 11 , "ENFP" : 12 , "ISFP" : 13 , "ISFJ" : 14 , "INFJ" : 15 , "1INFP" : 16}
+    "conv" : {"ESTP" : 1 , "ESTJ" : 2 , "ENTJ" : 3 , "ENTP" : 4 , "ISTP" : 5 , "ISTJ" : 6 , "INTJ" : 7 , "INTP" : 8 , "ESFP" : 9 , "ESFJ" : 10 , "ENFJ" : 11 , "ENFP" : 12 , "ISFP" : 13 , "ISFJ" : 14 , "INFJ" : 15 , "INFP" : 16}
   },
 ]
 
