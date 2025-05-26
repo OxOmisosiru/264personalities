@@ -293,15 +293,20 @@ function App() {
         <h1>
           {personality}
         </h1>
+        {/*
         <button onClick={() => {window.open(tweeturl , "_blank")}} className="mt-10 bg-white text-black px-4 py-2">
           診断結果を X で呟く
         </button>
+        */}
         <h2 className="mt-10">
           【挑戦１】診断の仕組みを理解し「AAAA」と診断されよう。{personality == "AAAA" ? "【達成！】" : ""}
             <br></br>
             <br></br>
           【挑戦２】Q13で選んだ4文字と最終的な診断結果を一致させよう（多くの作業を必要とします）。{personality == "INFP" ? "【達成！】" : ""}
         </h2>
+        <button className='mt-10 bg-green-300 text-black px-4 py-2' onClick={() => {location.reload()}}>
+          診断をやり直す
+        </button>
       </>
       
     )
