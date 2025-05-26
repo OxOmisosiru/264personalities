@@ -283,8 +283,10 @@ function App() {
   }
 
   if(submitted){
+    {/*
     const tweettxt = "診断結果：" + personality + (personality == "AAAA" ? "\n仕組みを理解し見事 AAAA と診断された！" : "") + (personality == "INFP" ? "\n全てを理解し大変な作業をし見事，自分の直観と診断結果を一致させた！" : "") + "\n\nあなたも 4 文字を診断→ https://26p4personalities.vercel.app/\n\n#26p4Personalities";
     const tweeturl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweettxt)}`;
+    */}
     return (
       <>
         <h1>
