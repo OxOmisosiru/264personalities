@@ -1,9 +1,7 @@
 # 26^4 Personalities
 
-16 Personalities have only 16 diagnostic results.
-Don't you think that is too few?
+16 Personalities (いわゆる MBTI 診断) には 16 個の診断結果がありますが，人間を表すのに 16 種類ではとても少ないと思いませんか？
 
-So I created a service with 181657 diagnostic results.
-You answer 13 questions and this service will represent your personality with 4 alphabets.
+ということで 13 問で 181657 個の診断結果がある性格診断を作りました！
 
-Have fun! :)
+あなたにピッタリの 4 文字を見つけましょう！！
